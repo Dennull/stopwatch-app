@@ -1,18 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Timer = () => {
-  const defaultTime = { hr: 0, min: 0, sec: 0, ms: 0 };
+const Timer = ({ time }) => {
+  const convertTime = (msTime) => {
+    const ms = Math.floor(msTime % 1000) / 10;
+    const sec = Math.floor(msTime / 1000) % 60;
+    const min = Math.floor(msTime / (1000 * 60)) % 60;
+    const hour = Math.floor(msTime / (1000 * 60 * 60)) % 24;
+    const convertedTime = { ms, sec, min, hour };
+    return convertedTime;
+  };
 
-  const [time, setTime] = useState(defaultTime);
-  const [isTimerOn, setisTimerOn] = useState(false);
+  const convertedTime = convertTime(time);
 
   return (
     <section>
       <p>
-        {time.hr > 10 ? <span>{time.hr}:</span> : <span>0{time.hr}:</span>}
-        {time.min > 10 ? <span>{time.min}:</span> : <span>0{time.min}:</span>}
-        {time.sec > 10 ? <span>{time.sec}:</span> : <span>0{time.sec}:</span>}
-        {time.ms > 10 ? <span>{time.ms}:</span> : <span>0{time.ms}</span>}
+        {convertedTime.hour >= 10 ? (
+          <span>{convertedTime.hour}:</span>
+        ) : (
+          <span>0{convertedTime.hour}:</span>
+        )}
+        {convertedTime.min >= 10 ? (
+          <span>{convertedTime.min}:</span>
+        ) : (
+          <span>0{convertedTime.min}:</span>
+        )}
+        {convertedTime.sec >= 10 ? (
+          <span>{convertedTime.sec}:</span>
+        ) : (
+          <span>0{convertedTime.sec}:</span>
+        )}
+        {convertedTime.ms >= 10 ? (
+          <span>{convertedTime.ms}</span>
+        ) : (
+          <span>0{convertedTime.ms}</span>
+        )}
       </p>
     </section>
   );
