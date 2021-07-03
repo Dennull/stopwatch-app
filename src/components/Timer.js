@@ -1,14 +1,6 @@
 import React from "react";
 
-const Timer = ({ time }) => {
-  const convertTime = (msTime) => {
-    const ms = Math.floor(msTime % 1000) / 10;
-    const sec = Math.floor(msTime / 1000) % 60;
-    const min = Math.floor(msTime / (1000 * 60)) % 60;
-    const hour = Math.floor(msTime / (1000 * 60 * 60)) % 24;
-    const convertedTime = { ms, sec, min, hour };
-    return convertedTime;
-  };
+const Timer = ({ time, convertTime }) => {
 
   const convertedTime = convertTime(time);
 
