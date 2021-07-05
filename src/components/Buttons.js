@@ -2,9 +2,25 @@ import React from "react";
 
 const Buttons = ({ isTimerOn, startTimer, stopTimer, resetTimer, addLap }) => {
   return (
-    <div>
-      {!isTimerOn ? <button onClick={startTimer}>Start</button> : <button onClick={stopTimer}>Stop</button> }
-      {!isTimerOn ? <button onClick={resetTimer}>Reset</button> : <button onClick={addLap}>Lap</button>}
+    <div className="btn-container">
+      {!isTimerOn ? (
+        <button className="btn start-btn" onClick={startTimer}>
+          Start
+        </button>
+      ) : (
+        <button className="btn stop-btn" onClick={stopTimer}>
+          Stop
+        </button>
+      )}
+      {!isTimerOn ? (
+        <button className="btn reset-btn" onClick={resetTimer}>
+          Reset
+        </button>
+      ) : (
+        <button className="btn lap-btn" onClick={addLap}>
+          Lap
+        </button>
+      )}
     </div>
   );
 };

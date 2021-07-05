@@ -27,7 +27,7 @@ const App = () => {
   const resetTimer = () => {
     setTime(0);
     setLaps([]);
-  }
+  };
 
   const convertTime = (msTime) => {
     const ms = Math.floor(msTime % 1000) / 10;
@@ -39,10 +39,10 @@ const App = () => {
   };
 
   const addLap = () => {
-    const newLap = {id:laps.length + 1, lapTime: time }
+    const newLap = { id: laps.length + 1, lapTime: time };
     const newLaps = [...laps, newLap];
-    setLaps(newLaps)
-  }
+    setLaps(newLaps);
+  };
 
   return (
     <main>
@@ -54,7 +54,7 @@ const App = () => {
         resetTimer={resetTimer}
         addLap={addLap}
       />
-      <Laps laps={laps} convertTime={convertTime}/>
+      <Laps laps={laps} convertTime={convertTime} />
     </main>
   );
 };

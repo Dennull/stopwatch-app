@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Timer */
+
+.timer-section {
+  text-align: center;
+}
+
+.timer {
+  font-size: 32px;
+}
+
+/* Buttons */
+
+.btn-container {
+  text-align: center;
+}
+
+.btn {
+  outline: none;
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 5px 10px;
+}
+
+.start-btn {
+  color: #33cc33;
+  border-color: #33cc33;
+}
+
+.stop-btn {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.reset-btn,
+.lap-btn {
+  color: #595959;
+  border-color: #595959;
+}
+
+/* Laps */
+
+.laps-section {
+  text-align: center;
+}
