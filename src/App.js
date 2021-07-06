@@ -48,6 +48,7 @@ const App = () => {
     <main>
       <Timer time={time} convertTime={convertTime} />
       <Buttons
+        time={time}
         isTimerOn={isTimerOn}
         startTimer={startTimer}
         stopTimer={stopTimer}

@@ -1,6 +1,13 @@
 import React from "react";
 
-const Buttons = ({ isTimerOn, startTimer, stopTimer, resetTimer, addLap }) => {
+const Buttons = ({
+  time,
+  isTimerOn,
+  startTimer,
+  stopTimer,
+  resetTimer,
+  addLap,
+}) => {
   return (
     <div className="btn-container">
       {!isTimerOn ? (
@@ -13,7 +20,11 @@ const Buttons = ({ isTimerOn, startTimer, stopTimer, resetTimer, addLap }) => {
         </button>
       )}
       {!isTimerOn ? (
-        <button className="btn reset-btn" onClick={resetTimer}>
+        <button
+          className="btn reset-btn"
+          onClick={resetTimer}
+          disabled={time === 0}
+        >
           Reset
         </button>
       ) : (

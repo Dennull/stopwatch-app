@@ -2,12 +2,19 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
 }
 
 /* Timer */
 
 .timer-section {
   text-align: center;
+  padding: 2em;
 }
 
 .timer {
@@ -23,9 +30,12 @@ body {
 .btn {
   outline: none;
   background: transparent;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid;
   padding: 5px 10px;
+  margin: 10px;
+  width: 75px;
+  cursor: pointer;
 }
 
 .start-btn {
@@ -44,8 +54,21 @@ body {
   border-color: #595959;
 }
 
+button:disabled {
+  opacity: 0.5;
+}
+
 /* Laps */
 
 .laps-section {
   text-align: center;
+  padding: 1em;
+}
+
+.lap {
+  margin: 1em;
+}
+
+.lap-number {
+  margin-right: 1em;
 }
